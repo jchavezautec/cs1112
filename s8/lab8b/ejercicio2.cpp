@@ -44,8 +44,9 @@ void CVector::insertar(entero elemento, entero posicion){
     redimensionar();
     entero t = elementos[posicion];
     for (int i=posicion; i < tamanio-1; i++){
-        t = elementos[i + 1];
-        elementos[i + 1] = elementos[i];
+        entero tmp = elementos[i + 1];
+        elementos[i + 1] = t;
+        t = tmp;
     }
     elementos[posicion] = elemento;
 }
